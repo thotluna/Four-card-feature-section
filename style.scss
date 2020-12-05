@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+$movil: 375px;
+
+$red: hsl(0, 78%, 62%);
+$cyan: hsl(180, 62%, 55%);
+$orange: hsl(34, 97%, 64%);
+$blue: hsl(212, 86%, 64%);
+$blue-dark: hsl(234, 12%, 34%);
+$blue-gray: hsl(229, 6%, 66%);
+$gray-light: hsl(0, 0%, 98%);
+$color-link: hsl(228, 45%, 44%);
+
+$font-size-standar: 15px;
+
+$border-width: 5px;
+$border-radius: 5px;
+$border-generic: 1px solid $gray-light;
+$shadow: 2px 2px 8px $blue-gray;
+
+$margin: 8px;
+$margin-extended: 16px;
+$margin-giant: 32px;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: $font-size-standar;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1000px;
+  width: 80%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  .title {
+    min-height: 4rem;
+    margin-bottom: $margin-extended;
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: $margin-extended 0;
+
+    h1 {
+      font-size: 1.5em;
+    }
+
+    h2 {
+      font-weight: 200;
+    }
+    p {
+      text-align: center;
+    }
+
+    @media (max-width: $movil) {
+      padding: $margin-giant 0;
+    }
+  }
+  .cards {
+    width: 100%;
+    padding: $margin-extended auto;
+    margin-bottom: $margin-extended;
+    display: grid;
+    gap: $margin-extended;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "... top-card ..."
+      "left-card top-card rigth-card"
+      "left-card bottom-card rigth-card"
+      "... bottom-card ...";
+    @media (max-width: $movil) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(4, 1fr) 5%;
+      grid-template-areas:
+        "left-card"
+        "top-card"
+        "bottom-card"
+        "rigth-card";
+    }
+    .top-card {
+      grid-area: top-card;
+      border-top: $border-width solid $red;
+    }
+    .left-card {
+      grid-area: left-card;
+      border-top: $border-width solid $cyan;
+    }
+    .rigth-card {
+      grid-area: rigth-card;
+      border-top: $border-width solid $blue;
+      
+    }
+    .buttom-card {
+      grid-area: bottom-card;
+      border-top: $border-width solid $orange;
+    }
+  }
+
+  .cards > div {
+    padding: 1rem;
+    // height: 158px;
+    border: $border-generic;
+    border-radius: $border-radius;
+    box-shadow: $shadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .img {
+      margin-top: $margin;
+      text-align: end;
+    }
+  }
+
+  footer {
+    grid-area: attribution;
+    .attribution {
+      font-size: 0.8em;
+      text-align: center;
+      a {
+        color: $color-link;
+      }
+    }
+  }
+}

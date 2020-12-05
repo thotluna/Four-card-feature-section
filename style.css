@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  max-width: 1000px;
+  width: 80%;
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.container .title {
+  min-height: 4rem;
+  margin-bottom: 16px;
+  grid-area: title;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 16px 0;
+}
+
+.container .title h1 {
+  font-size: 1.5em;
+}
+
+.container .title h2 {
+  font-weight: 200;
+}
+
+.container .title p {
+  text-align: center;
+}
+
+@media (max-width: 375px) {
+  .container .title {
+    padding: 32px 0;
+  }
+}
+
+.container .cards {
+  width: 100%;
+  padding: 16px auto;
+  margin-bottom: 16px;
+  display: -ms-grid;
+  display: grid;
+  gap: 16px;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas: "... top-card ..." "left-card top-card rigth-card" "left-card bottom-card rigth-card" "... bottom-card ...";
+}
+
+@media (max-width: 375px) {
+  .container .cards {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    -ms-grid-rows: (1fr)[4] 5%;
+        grid-template-rows: repeat(4, 1fr) 5%;
+        grid-template-areas: "left-card" "top-card" "bottom-card" "rigth-card";
+  }
+}
+
+.container .cards .top-card {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: top-card;
+  border-top: 5px solid #ea5353;
+}
+
+.container .cards .left-card {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: left-card;
+  border-top: 5px solid #45d3d3;
+}
+
+.container .cards .rigth-card {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  grid-area: rigth-card;
+  border-top: 5px solid #549ef2;
+}
+
+.container .cards .buttom-card {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: bottom-card;
+  border-top: 5px solid #fcaf4a;
+}
+
+.container .cards > div {
+  padding: 1rem;
+  border: 1px solid #fafafa;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 8px #a3a5ae;
+          box-shadow: 2px 2px 8px #a3a5ae;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container .cards > div .img {
+  margin-top: 8px;
+  text-align: end;
+}
+
+.container footer {
+  grid-area: attribution;
+}
+
+.container footer .attribution {
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.container footer .attribution a {
+  color: #3e52a3;
+}
+/*# sourceMappingURL=style.css.map */
